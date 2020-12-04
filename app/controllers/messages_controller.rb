@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @room = Room.find(params[:room_id])
+    @messages = @room.messages.includes(:user)
   end
   
   def create
@@ -12,6 +13,7 @@ class MessagesController < ApplicationController
       redirect_to room_messages_path(@room)
       #redirectによって実際にページが更新される
     else
+      @message = Message.messages.includes(:user)
       render :index
       #ページは同じだけどrender :indexはページの更新がないので書いた内容がそのままである
     end
