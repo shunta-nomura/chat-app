@@ -20,6 +20,9 @@ module ChatApp
       g.javascripts false
       g.helper false
       g.test_framework false
+      #時間の東京設定
+      config.i18n.default_locale = :ja
+      config.time_zone = 'Tokyo'
     end
   end
 end
