@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
       redirect_to room_messages_path(@room)
       #redirectによって実際にページが更新される
     else
-      @message = Message.messages.includes(:user)
+      @messages = @room.messages.includes(:user)
       render :index
       #ページは同じだけどrender :indexはページの更新がないので書いた内容がそのままである
     end
