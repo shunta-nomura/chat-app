@@ -11,9 +11,9 @@
   </div>
 </div>
 <div class="messages">
-<!-- partial: 'message'とすることで変数名がmessageに変わる
+<!-- partial: 'message'とすることで変数名がmessageに変わる-->
  <%= render partial: 'message', collection: @messages %>
--->
+
  
 </div>
 <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
